@@ -1,6 +1,6 @@
 from sqlalchemy import text
 
-from app.database.database import engine
+from app import engine
 
 
 try:

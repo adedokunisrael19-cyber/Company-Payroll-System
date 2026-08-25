@@ -1,9 +1,7 @@
 from datetime import date
-
 from sqlalchemy import Date, ForeignKey, Numeric, String
 from sqlalchemy.orm import Mapped, mapped_column, relationship
-
-from app.database.database import Base
+from app.database.database  import Base
 
 
 class Payroll(Base):

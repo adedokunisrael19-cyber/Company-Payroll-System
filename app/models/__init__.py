@@ -1,2 +1,2 @@
-from app.models.employee import Employee
-from app.models.payroll import Payroll
+from app import Employee
+from app import Payroll
