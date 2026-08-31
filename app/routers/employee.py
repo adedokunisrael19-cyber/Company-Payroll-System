@@ -1,6 +1,6 @@
 from fastapi import APIRouter
 
-from app.database.connection import SessionLocal
+from app.database.database import SessionLocal
 from app.repositories.employee_repository import EmployeeRepository
 from app.schemas.employee_schema import EmployeeCreate, EmployeeUpdate
 from app.services.employee_service import EmployeeService

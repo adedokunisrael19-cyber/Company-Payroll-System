@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 
-from app.database.connection import Base, engine
-from app.controllers.employee_controller import router
+from app.database.database import Base, engine
+from app.routers.employee import router
 
 app = FastAPI()
 
