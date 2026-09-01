@@ -4,7 +4,7 @@ from sqlalchemy.orm import Session
 from starlette import status
 
 from app.database.database import get_db
-from app.schemas.admin import AdminResponse, AdminCreate
+from app.schemas.admin import AdminResponse, AdminCreate, AdminLogin
 from app.services.auth import AuthService
 
 router = APIRouter(
@@ -20,9 +20,12 @@ def register(admin_data: AdminCreate, db:Session = Depends(get_db)):
 
 
 @router.post("/login")
-def login(admin_data: AdminCreate, db:Session = Depends(get_db)):
+def login(login_data: AdminLogin, db:Session = Depends(get_db)):
     auth_service = AuthService(db)
-    return auth_service.login(admin_data)
+    auth_service.login(login_data)
+    return {
+        "message": "login sucessful"
+    }
 
 
 @router.post("/logout")

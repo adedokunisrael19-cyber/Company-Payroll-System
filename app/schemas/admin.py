@@ -8,7 +8,7 @@ class AdminCreate(BaseModel):
 
 
 class AdminLogin(BaseModel):
-    email: EmailStr
+    email: str
     password: str
 
 class AdminResponse(BaseModel):
