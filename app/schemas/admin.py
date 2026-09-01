@@ -20,8 +20,4 @@ class AdminResponse(BaseModel):
     class Config:
         from_attributes = True
 
-class Token(BaseModel):
-    access_token: str
-    token_type: str
-
     # i added this for the front end for accesing protected endpoint
