@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 from fastapi.params import Depends
+from sqlalchemy.orm import Session
 from starlette import status
-from starlette.middleware.sessions import Session
 
 from app.database.database import get_db
 from app.schemas.admin import AdminResponse, AdminCreate

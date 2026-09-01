@@ -1,10 +1,9 @@
 from pydantic import BaseModel
-from pydantic.v1 import EmailStr
 
 
 class AdminCreate(BaseModel):
     username: str
-    email: EmailStr
+    email: str
     password: str
 
 
@@ -15,9 +14,7 @@ class AdminLogin(BaseModel):
 class AdminResponse(BaseModel):
     id: int
     username: str
-    email: EmailStr
+    email: str
 
     class Config:
         from_attributes = True
-
-    # i added this for the front end for accesing protected endpoint

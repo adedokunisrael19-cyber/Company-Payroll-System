@@ -1,6 +1,6 @@
 from sqlalchemy.orm import session, Session
 
-from app.models.Admin import Admin
+from app.models.admin import Admin
 from app.schemas.admin import AdminCreate
 
 
