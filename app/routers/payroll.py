@@ -3,7 +3,7 @@ from sqlalchemy.orm import Session
 from starlette import status
 
 from app.repositories.payroll import PayrollRepository
-from app.schemas.Payroll import PayrollResponse, PayrollCreateSchema, PayrollUpdate
+from app.schemas.payroll import PayrollResponse, PayrollCreateSchema, PayrollUpdate
 from app.services.payroll import PayrollService
 from app.database.database import get_db
 

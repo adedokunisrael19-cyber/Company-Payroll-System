@@ -5,7 +5,7 @@ from pygments.lexers import data
 from app.models import payroll
 from app.models.payroll import Payroll
 from app.repositories.payroll import PayrollRepository
-from app.schemas.Payroll import PayrollCreateSchema, PayrollUpdate
+from app.schemas.payroll import PayrollCreateSchema, PayrollUpdate
 
 
 class PayrollService:

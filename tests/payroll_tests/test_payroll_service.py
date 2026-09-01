@@ -7,7 +7,7 @@ from unittest.mock import MagicMock
 import pytest
 
 from app.models.payroll import Payroll
-from app.schemas.Payroll import PayrollCreateSchema, PayrollUpdate
+from app.schemas.payroll import PayrollCreateSchema, PayrollUpdate
 from app.services.payroll import PayrollService
 
 

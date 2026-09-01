@@ -3,7 +3,7 @@ from decimal import Decimal
 
 from pydantic import BaseModel, ConfigDict
 
-from app.schemas.PayrollStatus import PayrollStatus
+from app.schemas.payrollStatus import PayrollStatus
 
 
 class PayrollUpdate(BaseModel):
