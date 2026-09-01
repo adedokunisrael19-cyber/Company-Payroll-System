@@ -1,4 +1,4 @@
-from ast import List
+
 
 from sqlalchemy.orm import Session
 
