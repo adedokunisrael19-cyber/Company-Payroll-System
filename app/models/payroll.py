@@ -1,7 +1,7 @@
 from datetime import date
 from decimal import Decimal
 
-from sqlalchemy import Date, ForeignKey, Numeric, String
+from sqlalchemy import Date, ForeignKey, Numeric, String, Integer
 from sqlalchemy.orm import Mapped, mapped_column
 
 from app.database.database import Base
@@ -11,7 +11,9 @@ class Payroll(Base):
     __tablename__ = "payrolls"
 
     id: Mapped[int] = mapped_column(
-        primary_key=True
+        Integer,
+        primary_key=True,
+        autoincrement=True
         
     )
 

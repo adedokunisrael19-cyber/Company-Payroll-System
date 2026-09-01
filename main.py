@@ -11,7 +11,6 @@ Base.metadata.create_all(bind=engine)
 app = FastAPI(
     title="Company Payroll System",
     description="Payroll management API",
-    version="1.0.0"
 )
 
 app.include_router(employee_router)
