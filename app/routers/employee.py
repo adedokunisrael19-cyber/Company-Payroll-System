@@ -1,6 +1,7 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, HTTPException
+from starlette import status
 
-from app.database.connection import SessionLocal
+from app.database.database import SessionLocal
 from app.repositories.employee_repository import EmployeeRepository
 from app.schemas.employee_schema import EmployeeCreate, EmployeeUpdate
 from app.services.employee_service import EmployeeService
@@ -20,7 +21,13 @@ def create_employee(employee: EmployeeCreate):
 
 @router.get("/employees/{id}")
 def get_employee(id: int):
-    return employee_service.get_employee(id)
+    try:
+        return employee_service.get_employee(id)
+    except ValueError:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Employee not found"
+        )
 
 
 @router.get("/employees")
