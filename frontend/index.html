@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Payroll System</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="dashboard-layout">
+  <aside class="sidebar">
+    <div class="logo-area"><div class="logo-icon"></div></div>
+    <nav class="sidebar-nav">
+      <button class="nav-item active" id="nav-payroll" title="Payroll"><i class="fas fa-coins"></i></button>
+      <button class="nav-item" id="nav-employee" title="Employee"><i class="fas fa-users"></i></button>
+      <button class="nav-item" id="nav-settings" title="Settings"><i class="fas fa-sliders-h"></i></button>
+    </nav>
+    <div class="hamburger-wrap">
+      <button class="hamburger-btn" id="hamburgerToggle" aria-label="Toggle menu"><i class="fas fa-bars"></i></button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="top-header">
+      <div class="header-title">
+        <h1>Company Payroll System</h1>
+        <span class="breadcrumb"><i class="fas fa-home"></i> Dashboard / Payroll</span>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn"><i class="fas fa-cog"></i></button>
+        <button class="icon-btn"><i class="fas fa-bell"></i></button>
+        <button class="icon-btn"><i class="fas fa-user"></i></button>
+        <div class="profile-avatar"></div>
+      </div>
+    </header>
+
+   
+    <div class="view-toggle-bar">
+      <button id="toggle-payroll-dashboard" class="active">Payroll Dashboard</button>
+      <button id="toggle-employee-management">Employee Management</button>
+      <button id="toggle-payroll-management"  >Payroll Management</button>  
+    </div>
+
+    <section id="payroll-dashboard-section" class="view-section active">
+      <div class="stats-grid">
+        <div class="stat-card"><span class="stat-label">Total Salary</span><h2 class="stat-value" id="stat-total-salary">—</h2></div>
+        <div class="stat-card"><span class="stat-label">Total Allowances</span><h2 class="stat-value" id="stat-total-allowances">—</h2></div>
+        <div class="stat-card"><span class="stat-label">Total Overtime</span><h2 class="stat-value" id="stat-total-overtime">—</h2></div>
+        <div class="stat-card"><span class="stat-label">Total Incentives</span><h2 class="stat-value" id="stat-total-incentives">—</h2></div>
+      </div>
+
+      <div class="section-card breakdown-card">
+        <div class="card-header"><h3>Payroll Breakdown</h3></div>
+        <div class="breakdown-total"><h2 id="breakdown-grand-total">—</h2><span>Total Calculated Pay</span></div>
+      </div>
+
+      <div class="section-card list-card">
+        <div class="list-header" style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+          <h3>Payroll List</h3>
+          <div><input type="text" id="search-input" placeholder="Search employee..." style="padding:8px 14px; border-radius:30px; border:1px solid #e2e8f0; background:#fafcfc; font-family:inherit;"></div>
+        </div>
+        <div class="payroll-grid-3col" id="payroll-records-container">
+          <div class="loading-placeholder">Loading payroll data...</div>
+        </div>
+      </div>
+    </section>
+
+ 
+    <section id="payroll-management-section" class="view-section">
+      <div class="section-card" style="text-align:center; padding: 32px 20px;">
+        <div class="card-header"><h3><i class="fas fa-file-invoice" style="color:var(--theme-color); margin-right:8px;"></i> Payroll Management</h3></div>
+        <div class="btn-group" id="payroll-action-group">
+          <button id="payroll-create"><i class="fas fa-plus-circle"></i> Create Payroll</button>
+          <button id="payroll-view"><i class="fas fa-eye"></i> View Payrolls</button>
+          <button id="payroll-update"><i class="fas fa-pen"></i> Update Payroll</button>
+          <button id="payroll-delete"><i class="fas fa-trash"></i> Delete Payroll</button>
+        </div>
+        <div style="margin-top:28px; background:#f8fafc; border-radius:20px; padding:20px; border:1px dashed #d0d9e0;">
+          <p style="color:#475569;"><i class="fas fa-info-circle" style="color:var(--theme-color);"></i> Payroll CRUD operations will be available here.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="employee-management-section" class="view-section">
+      <div class="section-card" style="text-align:center; padding: 32px 20px;">
+        <div class="card-header"><h3><i class="fas fa-user-tie" style="color:var(--theme-color); margin-right:8px;"></i> Employee Management</h3></div>
+        <div class="btn-group" id="employee-action-group">
+          <button id="emp-create"><i class="fas fa-plus-circle"></i> Create Employee</button>
+          <button id="emp-view"><i class="fas fa-eye"></i> View Employees</button>
+          <button id="emp-update"><i class="fas fa-pen"></i> Update Employee</button>
+          <button id="emp-delete"><i class="fas fa-trash"></i> Delete Employee</button>
+        </div>
+        <div style="margin-top:28px; background:#f8fafc; border-radius:20px; padding:20px; border:1px dashed #d0d9e0;">
+          <p style="color:#475569;"><i class="fas fa-info-circle" style="color:var(--theme-color);"></i> Employee CRUD operations will be available here.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
